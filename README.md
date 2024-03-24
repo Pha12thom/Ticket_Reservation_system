@@ -18,10 +18,10 @@ This is a simple bus booking ticket system implemented using PHP. It allows user
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your_username/bus-booking-ticket-system.git
+   git clone https://github.com/your_username/Ticket_Reservation_system/.git
    ```
 
-2. Import the database schema using the provided SQL file (`database.sql`).
+2. Import the database schema using the provided SQL file (`booking_db.sql`).
 
 3. Update the database connection settings in the PHP files to match your database credentials:
 
