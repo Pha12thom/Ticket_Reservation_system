@@ -1,4 +1,4 @@
 <?php
-header("location: booking/");
+header("location: registration/registration.php");
 
 ?>
