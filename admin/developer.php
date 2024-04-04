@@ -49,9 +49,10 @@
         <div class="ui segment">
   <img class="ui centered medium circular image" src="carolly.jpg"><br>
   <div class="ui horizontal divider">About me</div>
-		<p>Hi, there!. i'm carolly, the developers  I love programming, i really do, it happens to be my hobby. Its what i do best</p> 
+		<p>Hi, there!. i'm carolly, the future of programming lies in me, in other words, am the future of programming.<br>
+</br> programming is like a basic need. I cannot do without it, that's what i do best if you had no idea</p> 
 		<div class="ui horizontal divider">Contacts Details</div>
-		<p>Wondering where to find me? Reach me at;<br> Email: <a>georgewainaina18@gmail.com</a> <br>Personal Contact : <a>+254 705418696</a><br> I am willing to teach new programmers</p>
+		<p>Wondering where to find me? Wonder no more. Reach me at;<br> Email: <a>carolyopere353@gmail.com</a> <br>Personal Contact : <a>+254 741862169</a><br> I am willing to teach new programmers</p>
 		</div>		
         </div>
 
@@ -59,9 +60,9 @@
         <div class="ui segment">
   <img class="ui centered medium circular image" src="milugo.jpeg"><br>
   <div class="ui horizontal divider">About me</div>
-		<p>Hi, there!. This is George, I love programming, i really do, it happens to be my hobby. Its what i do best</p> 
+		<p>Hi, there!. i'm milugo Geofrey, a passionate full stack software engineer</p> 
 		<div class="ui horizontal divider">Contacts Details</div>
-		<p>Wondering where to find me? Reach me at;<br> Email: <a>georgewainaina18@gmail.com</a> <br>Personal Contact : <a>+254 705418696</a><br> I am willing to teach new programmers</p>
+		<p>Wondering where to find me? Reach me at;<br> Email: <a>geofreymilugo@gmail.com</a> <br>Personal Contact : <a>+254 112155880</a><br> I am learning software engineering and artificial intelligence</p>
 		</div>		
         </div>
 			</div>	
