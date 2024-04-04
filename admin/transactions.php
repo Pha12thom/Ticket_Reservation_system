@@ -51,7 +51,8 @@
 <tbody>
 <?php
 require("../dbengine/dbconnect.php");
-if(isset($_GET['search'])){$search=$_GET['search'];$data=mysqli_query($conn,"SELECT order_ref,fullname,amount,account,transaction_id FROM booking_details WHERE order_ref LIKE '%$search%' or transaction_id LIKE '%$search%' or account LIKE '%$search%' or fullname LIKE '%$search%'");}
+if(isset($_GET['search'])){$search=$_GET['search'];
+  $data=mysqli_query($conn,"SELECT order_ref,fullname,amount,account,transaction_id FROM booking_details WHERE order_ref LIKE '%$search%' or transaction_id LIKE '%$search%' or account LIKE '%$search%' or fullname LIKE '%$search%'");}
 else{$data=mysqli_query($conn,"SELECT order_ref,fullname,amount,account,transaction_id FROM booking_details");}
 
 if(($data) && (mysqli_num_rows($data) >0)){

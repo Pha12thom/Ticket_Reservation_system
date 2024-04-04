@@ -4,33 +4,33 @@ require_once '../dbengine/dbconnect.php';
 
 // Define variables to store user input
 $fullnames = $username = $password = $confirmPassword = '';
+$error = '';
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve user input from the form
-    $fullnames = $_POST['fullnames'];
-    $username = $_POST['username'];
+    // Sanitize user input
+    $fullnames = htmlspecialchars($_POST['fullnames']);
+    $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
 
-    // Validate user input (you can add more validation rules as needed)
+    // Validate user input
     if (empty($fullnames) || empty($username) || empty($password) || empty($confirmPassword)) {
         $error = 'Please fill in all fields.';
     } elseif ($password !== $confirmPassword) {
         $error = 'Passwords do not match.';
     } else {
-        // Hash the password for security
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Insert the user data into the database
+        // Insert the user data into the database table
         $sql = "INSERT INTO users (fullnames, username, password) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sss', $fullnames, $username, $hashedPassword);
-        $stmt->execute();
-
-        // Redirect to a success page or perform any other necessary actions
-        header('Location: login.php');
-        exit();
+        $stmt->bind_param('sss', $fullnames, $username, $password);
+        if ($stmt->execute()) {
+            // Redirect to success page
+            header('Location: login.php');
+            exit();
+        } else {
+            $error = 'Registration failed. Please try again later.';
+        }
     }
 }
 ?>
@@ -44,25 +44,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>User Registration</h1>
 
-    <?php if (isset($error)) : ?>
+    <?php if (!empty($error)) : ?>
         <p><?php echo $error; ?></p>
     <?php endif; ?>
 
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <label for="fullnames">Full Names:</label>
+
         <input type="text" name="fullnames" id="fullnames" value="<?php echo $fullnames; ?>"><br>
 
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" value="<?php echo $username; ?>"><br>
+        
 
         <label for="password">Password:</label>
         <input type="password" name="password" id="password"><br>
 
         <label for="confirmPassword">Confirm Password:</label>
         <input type="password" name="confirmPassword" id="confirmPassword"><br>
+        <nav>
+            <ul>password must contain:
+                <li>At least 8 characters</li>
+                <li>At least 1 number</li>
+                <li>At least 1 special character</li>
+        </nav>
 
         <input type="submit" value="Register">
-        <p>have an account? <a href="login.php">Login now</a>.</p>
+        <p>Already have an account? <a href="login.php">Login now</a>.</p>
     </form>
   
 </body>

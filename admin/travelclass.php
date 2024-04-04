@@ -34,7 +34,7 @@
       <div class="row">
         <div class="column" id="sidebar">
           <div class="ui secondary vertical fluid menu">
-            <a class="item" href="bookings.php">Bookings</a><a class="item " href="transactions.php">Transactions</a><a class="active item" href="travelclass.php">Traveling Classes</a><a class="item">Export</a>
+            <a class="item" href="bookings.php">Bookings</a><a class="item " href="transactions.php">Transactions</a>
 			<a class="item" href="developer.php">About developer</a>
           </div>
         </div>
@@ -51,7 +51,10 @@
 <tbody>
 <?php
 require("../dbengine/dbconnect.php");
-if(isset($_GET['search'])){$search=$_GET['search'];$data=mysqli_query($conn,"SELECT * FROM available_class WHERE class_id LIKE '%$search%' or class_name LIKE '%$search%'");}
+if(isset($_GET['search'])){
+  $search=$_GET['search'];
+  $data=mysqli_query($conn,"SELECT * FROM available_class WHERE class_id LIKE '%$search%' or class_name LIKE '%$search%'");
+}
 else{$data=mysqli_query($conn,"SELECT * FROM available_class");}
 
 if(($data) && (mysqli_num_rows($data) >0)){

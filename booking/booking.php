@@ -93,7 +93,7 @@ cursor:pointer;
   </div>   
   </div>
 <div class="field">  
-    <label>Traveling Class</label><span><a href="home.php">Learn more</a><i> about traveling classes</i></span>
+    <label>Traveling Class</label><span></span>
  <div class="field">
     <select name="gender" required id="travelclass">
       <option value="" selected disabled>--Travel Class--</option>
@@ -204,9 +204,13 @@ cursor:pointer;
 <br>
 <div class="ui horizontal divider">The Details Provided</div>
 <div id="details"></div>
+please note down your order ref for future printing
+<div class="header">Order Ref: <span style="color:red;font-size:15px"><?php echo $_SESSION['ORDERREF']?> <a href='index.php'> Cancel Order</a></span> </div>
 <div class="ui horizontal divider">Confirm Details</div>
 <div class="ui fluid container center aligned">
+
 <a class="ui button green" onclick="senddata()">YES|Confirm</a>
+<a class = "print" onclick="window.print()"> print</a>
 </div>
 </div>
 </div>

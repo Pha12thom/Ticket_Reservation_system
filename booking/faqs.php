@@ -19,14 +19,14 @@
     Is this Website Real?
   </div>
   <div class="content" id="c3">
-    <p class="transition">Unfortunately, this website is not officially operational and thus does <a>NOT</a> print working tickets/orders whatsoever.</p>
-    <p class="transition">But, the good thing is that this system is currently under development and may be used soon.</p>
+    <p class="transition">This website is officially operational and <a>  DOES</a> print working tickets.</p>
+  
   </div>
     <div class="title" onclick="$('#c4').slideToggle();">
     <i class="dropdown icon"></i>
-    Who is the Developer of this system?
+    Who are the Developers of this system?
   </div>
   <div class="content" id="c4">
-    <p class="transition">Good question, The developer and CEO of Swagfin Apps , George Wainaina Contact: <a>+254705418696</a> or Email me at: <a>georgewainaina18@gmail.com</a> for more inquiries. </p>
+    <p class="transition">Good question, The Developers are <li> Milugo Geofrey  <a>0112155880</a>  Email: <a>geofreymilugo@gmail.com</a> <li> Carolly opere  <a>0741862169</a>  Email: <a>carolyoprere353@gmail.com</a>  </p>
   </div>
 </div>
