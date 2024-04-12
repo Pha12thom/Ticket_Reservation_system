@@ -33,11 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // Password is incorrect
-            $error = 'Invalid password.';
+            $error = 'Invalid password please try again.';
+            echo "<script>alert('$error');</script>";	
         }
     } else {
         // Username does not exist
-        $error = 'Invalid username or password.';
+        $error = 'Invalid username or password please try again.';
+        echo "<script>alert('$error');</script>";	
     }
 }
 ?>
