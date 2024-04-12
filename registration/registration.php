@@ -18,7 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($fullnames) || empty($username) || empty($password) || empty($confirmPassword)) {
         $error = 'Please fill in all fields.';
     } elseif ($password !== $confirmPassword) {
-        $error = 'Passwords do not match.';
+        $error = 'Passwords do not match please try again';
+        echo "<script>
+        alert('$error');
+        </script>";
     } else {
         // Insert the user data into the database table
         $sql = "INSERT INTO users (fullnames, username, password) VALUES (?, ?, ?)";
@@ -30,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             $error = 'Registration failed. Please try again later.';
+            echo "<script>alert('$error');</script>";	
         }
     }
 }
@@ -63,10 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="confirmPassword">Confirm Password:</label>
         <input type="password" name="confirmPassword" id="confirmPassword"><br>
         <nav>
-            <ul>password must contain:
-                <li>At least 8 characters</li>
-                <li>At least 1 number</li>
-                <li>At least 1 special character</li>
+            
         </nav>
 
         <input type="submit" value="Register">
