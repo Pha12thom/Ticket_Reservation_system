@@ -4,12 +4,14 @@ setTimeout(function(){$("form").removeClass("loading");},2000);
 
 
 function booking(){
+	$("#bookingbtn").removeClass("disabled");	
 	$("#contact-page").hide();
 	$("#billing-page").hide();
 	$("#confirmdetails-page").hide();
-	$("#booking-page").fadeIn("slow"); 	
-	return false;
+	$("#booking-page").fadeIn("slow");
+return false;
 }
+
 function contact(){
 	$("#contactbtn").removeClass("disabled");	
 	$("#booking-page").hide();
